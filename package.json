@@ -1,16 +1,58 @@
 {
-  "name": "express-hello-world",
+  "name": "aki-bot-hosting",
   "version": "1.0.0",
-  "description": "Express Hello World on Render",
   "main": "app.js",
-  "repository": "https://github.com/render-examples/express-hello-world",
-  "author": "Render Developers",
-  "license": "MIT",
-  "private": false,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0"
   }
 }
+```
+
+5. Click **"Commit changes"**
+
+---
+
+## **Step 3: Connect Your Fork to Render**
+
+1. Go to **Render Dashboard**: https://dashboard.render.com
+2. Click on your **`akis-bot-host`** service
+3. Click **"Settings"** in the left sidebar
+4. Scroll to **"Repository"** section
+5. Click **"Disconnect"** (if there's a repo connected)
+6. Click **"Connect Repository"**
+7. Find and select: **`akio66833-ui/express-hello-world`** (your forked repo)
+8. Click **"Connect"**
+
+---
+
+## **Step 4: Update Build Settings**
+
+Still in Settings:
+
+1. Scroll to **"Build & Deploy"**
+2. Make sure these are set:
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start` or `node app.js`
+3. Click **"Save Changes"**
+
+---
+
+## **Step 5: Deploy**
+
+Render will automatically start deploying. You'll see:
+- "Build in progress..." (takes 2-3 minutes)
+- Once done, it'll show "Live" with a green dot
+
+---
+
+## **Step 6: Test**
+
+Open your browser and go to:
+```
+https://akis-bot-host.onrender.com/
